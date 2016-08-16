@@ -47,6 +47,7 @@ public class SplitterNChecker {
             if (!successForWholeFile) {
                 outE.close();
                 fstreamOutErr.close();
+                new File(pathErrors).mkdirs();
 
                 mover.moveFile(pathTemp + newNameErr, pathErrors + newNameErr);
             }
@@ -63,6 +64,8 @@ public class SplitterNChecker {
 
     public void initReadNWrite(InboundFile fileToOpen) {
         try {
+            new File(pathTemp).mkdirs();
+
             fstreamIn = new FileReader(fileToOpen.getFilePath() + fileToOpen.getNameOfFile());
             in = new BufferedReader(fstreamIn);
 

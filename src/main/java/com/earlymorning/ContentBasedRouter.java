@@ -37,6 +37,10 @@ public class ContentBasedRouter {
 
     public void moveFile(String pathFileWithName, String pathDestination) {
         try {
+//            File creator;
+//            if (!(creator = new File(pathDestination)).isDirectory() ){ //check IF EXIST and is a directory
+//                creator.mkdirs();
+//            }
             File fileIn = new File(pathFileWithName);
             File fileOut = new File(pathDestination);
 
