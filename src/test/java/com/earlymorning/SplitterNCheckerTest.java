@@ -19,7 +19,7 @@ public class SplitterNCheckerTest {
     private SplitterNChecker controller;
 
     @Value("${path.file.test}")
-    private String pathFileTest;
+    private String pathFileTest="src/main/resources/input/test/";
 
     @org.junit.Before
     public void setUp() throws Exception {
@@ -31,8 +31,8 @@ public class SplitterNCheckerTest {
     public void splitWithSuccessTest() throws Exception {
         DateTime dateFile = new DateTime(2030, 1, 1, 0, 0);
 
-        InboundFile testFileR = new InboundFile(1, dateFile.toDate(), "reportTest.csv", dateFile.toDate(), "D:/Programmi/IntelliJ IDEA Community Edition 2016.2.1/Projects/Compliance of inbound data files/src/main/resources/input/test/");
-        InboundFile testFileW = new InboundFile(2, dateFile.toDate(), "reportTestWrong.csv", dateFile.toDate(), "D:/Programmi/IntelliJ IDEA Community Edition 2016.2.1/Projects/Compliance of inbound data files/src/main/resources/input/test/");
+        InboundFile testFileR = new InboundFile(1, dateFile.toDate(), "reportTest.csv", dateFile.toDate(), pathFileTest);
+        InboundFile testFileW = new InboundFile(2, dateFile.toDate(), "reportTestWrong.csv", dateFile.toDate(), pathFileTest);
 
 
         assertTrue("The file was whole correct", controller.splitWithSuccess(testFileR));

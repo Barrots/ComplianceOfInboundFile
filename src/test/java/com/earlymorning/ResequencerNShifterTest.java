@@ -36,6 +36,9 @@ public class ResequencerNShifterTest {
         checker.createNewFile();
         controller.insertTimeStampInName(testFileWithNoTS);
         assertTrue("The file didn't changed his name", !checker.getName().equalsIgnoreCase(testFileWithNoTS.getNameOfFileWithoutExt()));
+        File deleter =new File( pathFileTest + testFileWithNoTS.getNameOfFile() );
+        deleter.delete();
+
     }
 
 }
